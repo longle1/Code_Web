@@ -1,0 +1,5 @@
+1. overflow: tạo thanh cuộn (overflow-x,overflow-y)
+2. transition: hiệu ứng chạy
+3. transform: tạo hiệu ứng quay 1 phần tử 
+	transform: rotate(...deg) (skew,scale)
+	transform-origin: left top (20% 30%) (cho phép thay đổi vị trí quay)

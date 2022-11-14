@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Step</title>
+    <style>
+         @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+        :root {
+            --line-border-fill: #3498db;
+            --line-border-empty: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f6f7fb;
+            font-family: 'Muli', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+        }
+        .container{
+            text-align: center;
+        }
+        .progress-container{
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-bottom: 30px;
+            max-width: 100%;
+            width: 400px;
+        }
+        .progress-container::before{
+            content: '';
+            background-color: var(--line-border-empty);
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            height: 4px;
+            width: 100%;
+            z-index: -1;
+        }
+        .progress {
+            height: 5px;
+            width: 0%;
+            background-color:  var(--line-border-fill);
+            position: absolute;
+            left: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: -1;
+            transition: 0.4s ease;
+        }
+        .circle{
+            background-color: var(--line-border-empty);
+            width: 30px;
+            height: 30px;
+            border-radius: 50% 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid #bebebe;
+            transition: 0.4s ease;
+        }
+        .circle.active{
+            border: 3px solid var(--line-border-fill);
+        }
+        .btn{
+            background-color: var(--line-border-fill);
+            color: #fff;
+            border: 0;
+            cursor: pointer;
+            border-radius: 7px;
+            font-family: inherit;
+            padding: 8px 30px;
+            margin: 5px;
+            font-size: 15px;
+        }
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn:focus {
+            outline: 0;
+        }
+
+        .btn:disabled {
+            background-color: var(--line-border-empty);
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="progress-container">
+            <!-- để tạo ra cái đường chạy -->
+          <div class="progress" id="progress"></div>
+          <div class="circle active">1</div>
+          <div class="circle">2</div>
+          <div class="circle">3</div>
+          <div class="circle">4</div>
+        </div>
+  
+        <button class="btn" id="prev" disabled>Prev</button>
+        <button class="btn" id="next">Next</button>
+      </div>
+      <!-- <script src="main.js"></script> -->
+      <script>
+          var progressContainer = document.querySelector('.progress-container');
+          var progress = document.getElementById('progress');
+          var circles = progressContainer.querySelectorAll('.circle');
+          var currentValue = 1;
+          var btnNext = document.getElementById('next');
+          var btnPrev = document.getElementById('prev');
+
+          btnNext.addEventListener('click',function(e){
+            currentValue++;
+            if(currentValue > circles.length)
+                currentValue = circles.length;
+            setting();
+          })
+          btnPrev.addEventListener('click',function(e){
+            currentValue--;
+            if(currentValue < 1)
+                currentValue = 1;
+            setting();
+          })
+          function setting(){
+            circles.forEach(function (element,index){
+            if(index < currentValue)
+                element.classList.add('active');
+            else
+                element.classList.remove('active');
+            })
+            let actives = document.querySelectorAll('.active');
+            actives.forEach(function(e){
+                console.log(actives.length,circles.length);
+            }
+            )
+            progress.style.width = ((actives.length - 1)/(circles.length - 1))*100 + '%';
+            if(currentValue === circles.length){
+                btnNext.disabled = true;
+            }else if(btnPrev === 1){
+                btnPrev.disabled = true;
+            }else{
+                btnPrev.disabled = false;
+                btnNext.disabled = false;
+            }
+          }
+      </script>
+</body>
+</html>

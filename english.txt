@@ -1,0 +1,16 @@
+standart: tiêu chuẩn
+dynamic: động
+react: phản ứng
+selector: người lựa chọn
+collection: sưu tầm
+anchor: mỏ neo
+specify: xác định
+fit: phù hợp
+render: kết xuất
+invisible: không hiển thị
+duration: khoảng thời gian
+effect: hiệu ứng
+rotate: quay
+skew: nghiêng
+scale: tỉ lệ
+applies: ứng dụng

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        border: 0;
+        padding: 0
+      }
+      body {
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+        margin: 0;
+        background-position: center center;
+        background-size: cover;
+        transition: 0.4s;
+      }
+      .slider-container {
+        height: 100vh;
+        width: 50vw;
+        position: relative;
+      }
+      .slide.active {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .slide {
+        display: block;
+        max-width: 100%;
+        height: 100%;
+      }
+      img {
+        width: 100%;
+      }
+      .arrow {
+        position: absolute;
+        height: 80px;
+        width: 80px;
+        border: 2px solid orange;
+        background-color: transparent;
+        color: black;
+        font-size: 50px;
+        padding: 15px;
+      }
+      .arrow.left-arrow {
+        top: 50%;
+        left: -10.3%;
+      }
+      .arrow.right-arrow {
+        top: 50%;
+        right: 10.3%;
+      }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slide ">
+            <img src="./images/photo-1495467033336-2effd8753d51.avif" alt="">
+        </div>
+        <div class="slide">
+            <img src="./images/photo-1511593358241-7eea1f3c84e5.avif" alt="">
+        </div>
+        <div class="slide">
+            <img src="./images/photo-1522735338363-cc7313be0ae0.avif" alt="">
+        </div>
+        <div class="slide">
+            <img src="./images/photo-1549880338-65ddcdfd017b.avif" alt="">
+        </div>
+        <div class="slide">
+            <img src="./images/photo-1559087867-ce4c91325525.avif" alt="">
+        </div>
+        <button class="arrow left-arrow" id="left">
+          <i class="fas fa-arrow-left"></i>
+        </button>
+  
+        <button class="arrow right-arrow" id="right">
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+</body>
+</html>

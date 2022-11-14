@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span.isOpen{
+            display: block;
+        }
+        span{
+            display: none;
+        }
+
+        ul {
+            display: flex;
+            width: 500px;
+        }
+        ul li{
+            list-style-type: none;
+        }
+        ul li a{
+            margin: 10px 20px;
+            text-decoration: none;
+        }
+        .tab .tab-content.isOpen{
+            display: block;
+        }
+        .tab .tab-content{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class = "toggle" id = "div1">
+        <button type = "button">Click</button>
+        <div class = "toggle-content isOpen">
+            <p>Hiển thị thông tin thứ 1</p>
+        </div>
+    </div>
+    <div class = "toggle" id = "div2">
+        <button type = "button">Click</button>
+        <div class = "toggle-content">
+            <p>Hiển thị thông tin thứ 2</p>
+        </div>
+    </div>
+    <div class = "toggle" id = "div3">
+        <button type = "button">Click</button>
+        <div class = "toggle-content">
+            <p>Hiển thị thông tin thứ 3</p>
+        </div>
+    </div>
+
+
+    <button class = "dark-mode">
+        <span>turn off dark mode</span>
+        <span class = "isOpen">turn on dark mode</span>
+    </button>
+
+    <div class="tab" id = "tab1"> 
+        <ul>
+            <li><a href="#" target-id = "1">London</a></li>
+            <li><a href="#" target-id = "2">Paris</a></li>
+            <li><a href="#" target-id = "3">Tokyo</a></li>
+        </ul>
+        <div class="tab-contents">
+            <div class = "tab-content isOpen">
+                <h1>London</h1>
+                <p>London is the capital city of England.</p>
+            </div>
+            <div class = "tab-content">
+                <h1>Paris</h1>
+                <p>Paris is the capital of France.</p>
+            </div>
+            <div class = "tab-content">
+                <h1>Tokyo</h1>
+                <p>Tokyo is the capital of Japan.</p>
+            </div>
+        </div>
+    </div>
+    <div class="tab" id = "tab2"> 
+        <ul>
+            <li><a href="#" target-id = "1">London</a></li>
+            <li><a href="#" target-id = "2">Paris</a></li>
+            <li><a href="#" target-id = "3">Tokyo</a></li>
+        </ul>
+        <div class="tab-contents">
+            <div class = "tab-content isOpen">
+                <h1>London</h1>
+                <p>London is the capital city of England.</p>
+            </div>
+            <div class = "tab-content">
+                <h1>Paris</h1>
+                <p>Paris is the capital of France.</p>
+            </div>
+            <div class = "tab-content">
+                <h1>Tokyo</h1>
+                <p>Tokyo is the capital of Japan.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class = "box-1">
+        <ul>
+            <li>javascript</li>
+            <li>php</li>
+        </ul>
+    </div>
+    <div class = "box-2">
+        <ul>
+            <li>javascript1</li>
+            <li>php1</li>
+        </ul>
+    </div>
+</body>
+<script src="/event/event.js"></script>
+</html>

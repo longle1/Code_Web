@@ -1,0 +1,81 @@
+DOM: document object model
+
+HTML là gì? 
+    - là 1 dạng thẻ xml => tạo thành các object trong js
+
+CSS là gì?
+    - là 1 dạng đơn giản của object style trong object
+
+- Tất cả thẻ HTML đều là mô hình của object
+
+
+- Các cách lấy các thẻ HTML:
+
+    + getElementById('id'): lấy element bằng ID nhưng chỉ lấy được 1 cái
+
+    + getElementsByClassName('class'): lấy element bằng class
+        - trả về HTMLCollection: mảng của các thẻ HTML
+        - không thể dùng forEach mà phải dùng for...of
+
+    + getElementsByTagName('tag name'): lấy các element bằng tên thẻ
+        - trả về HTMLCollection: mảng của các thẻ HTML
+        - không thể dùng forEach mà phải dùng for...of
+        
+    +querySelector('css selector'): lấy được 1 cái đầu tiên
+
+    +querySelectorAll('css selector'): trả về 1 cái NodeList
+        -NodeList: trả về 1 mảng
+
+- Lấy ra tất cả ảnh: .image
+- Lấy ra các cái form: .forms
+- Lấy ra thẻ body: .body
+
+
+- Event:
+    - là những điều xảy ra với Elenment
+các Element: phản ứng lại với những điều xảy ra với nó
+
+Event handler: Hàm function => 
+    - sẽ chạy khi có điều kiện xảy ra
+    - các thuộc tính trong object
+
+Các Event handler thông dụng: 
+    + onclick
+    + ondbclick
+    + onmouseover: chuột đang ở bên ngoài mà di chuyển vào trong
+    + onmouseout: chuột từ bên trong mà di chuyển ra bên ngoài
+    + onmousemove: chuột đang ở bên trong
+
+event:
+    + target: chính là thẻ html xảy ra sự kiện
+    + preventDefault(): dùng để hủy bỏ hành động mặc định
+    + stopPropagation(): 
+
+addEventListener('event name',function)
+removeEventListener('event nam')
+
++ các thuộc tính:
+    - getAttribute('attribute name'): lấy ra giá trị thuộc tính HTML 
+        + attribute name: id,class,...
+    
+    -setAttribute(attribute name', value)
+
+
+classList: danh sách class của thẻ đó
+    - contains('class'): kiểm tra class có trong classList hay không
+    - add('name class'): thêm 1 class vào danh sách class
+    - remove('name class'): xóa 1 class trong danh sách các class
+    - toggle('class'): kiểm tra xem trong class có class đó chưa nếu có rồi thì xóa đi, nếu chưa có thì thêm vào
+
+
+- Tạo ra 1 object bằng js:
+    - document.createElement('tag name')
+    - appenChild('element')
+    - .innerHTML = 'thẻ html': dễ bị đánh cắp thông tin
+    - innerText
+
+
+- Để thêm attribute vào 1 thẻ thì:
+    - .id = 'content'
+    - .title = ' '
+    - .className = ' '
